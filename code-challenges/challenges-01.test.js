@@ -1,7 +1,7 @@
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 1 - done
+CHALLENGE 1 - done done done
 
 Write a function named greeting that takes in a string and returns the string in all uppercase letters.
 
