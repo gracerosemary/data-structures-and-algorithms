@@ -10,11 +10,10 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 const raisedToTheThird = (arr) => {
   // Solution code here...
-  let newArr = [];
-  arr.forEach(number => {
-    newArr.push(Math.pow(number, 3));
-  }); 
-  return newArr;
+  arr.forEach((value, i) => {        // forEach is implemented as a method on the array
+    arr[i] = Math.pow(value, 3);      // takes a callback as a parameter, which receives the value and runs on every element)
+  });                               
+  return arr;                      // return new array of numbers raised to 3rd power
 }
 
 /* ------------------------------------------------------------------------------------------------
