@@ -58,7 +58,7 @@ const appendFirstToLast = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+CHALLENGE 4 - done
 
 Write a function that accepts an object and an integer as arguments and adds a new property to the object called yearBorn. The value of the yearBorn property should be the integer that was passed in.
 
@@ -92,7 +92,12 @@ console.log(people[1].isAuthor) prints true
 
 const setStatusAsAuthor = (people) => {
   // Solution code here...
+  people.isAuthor = people;
+  people.forEach = (people) => {
+    people = true;
+  };
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
