@@ -26,7 +26,7 @@ let output = [];
 }
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 2
+CHALLENGE 2 - did in class
 
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
 
@@ -34,10 +34,12 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   // Solution code here...
+  let output = str;
+  return `${str} The end.`;
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 3
+CHALLENGE 3 - did in class
 
 Write a function that accepts an array and copies the first element to the end of the array. The change should be reflected in the source array that was passed in to the function. That is, the function should modify the array 'in place'.
 
@@ -51,6 +53,8 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
+  arr.push(arr[0])
+
 };
 
 /* ------------------------------------------------------------------------------------------------
