@@ -37,7 +37,7 @@ const sortBackwards = (arr) => {
 sortBackwards;
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 3
+CHALLENGE 3 - done!
 
 Write a function named alphabetize that takes in an array of strings and returns the same array with the strings sorted alphabetically.
 
@@ -48,6 +48,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+  return arr.sort();                   // unicode letter value - capitalized letters are lower in number value
 };
 
 /* ------------------------------------------------------------------------------------------------
