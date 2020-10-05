@@ -59,6 +59,9 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
+  return arr.sort( (a,b) => {
+    return a.length - b.length;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
