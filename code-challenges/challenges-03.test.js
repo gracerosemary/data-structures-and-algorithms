@@ -23,14 +23,18 @@ const changeAllClassNames = () => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 2
+CHALLENGE 2 - done! 
 
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
 ------------------------------------------------------------------------------------------------ */
-
 const sortBackwards = (arr) => {
-  // Solution code here...
+// Solution code here...
+  return arr.sort( (a,b) => {
+    return b - a;
+  });
 };
+
+sortBackwards;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
