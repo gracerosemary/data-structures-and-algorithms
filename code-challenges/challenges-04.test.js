@@ -50,7 +50,7 @@ const isNum = (input) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 3 - done! 
+CHALLENGE 3 - done!
 
 Write a function named isCapitalized that takes in a string. This function should use a regular expression pattern to match all words that begin with a capital letter. It should only match words, not punctuation.
 
@@ -73,8 +73,11 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  // let regex = /\b[A-J]+[a-z]+/; -- does not work because San Diego is received for some reason (works on regex101.com tho..)
+  // let regex = /^[A-J]/g;  -- adding /g does not work because Chicago does not return for some reason
+  // reference: https://javascript.info/regexp-anchors
   let aj = [];
-  let regex = /\b[A-J]+[a-z]+\b/g;
+  let regex = /^[A-J]/;
   arr.forEach (input => {
     if (regex.test(input)) {
       aj.push(input);
