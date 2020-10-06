@@ -29,7 +29,7 @@ const generateSubmitButton = () => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 2
+CHALLENGE 2 - done!
 
 Write a function named isNum that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains a number, and false if the input does not contain a number.
 
@@ -42,6 +42,10 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  // tried this but it returned 'false' -> return input === [0-9] ? true : false;
+  // switched false/true and it worked but not sure why -> return input === [0-9] ? false : true;    
+  let numbers = /\d/g;
+  return numbers.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
