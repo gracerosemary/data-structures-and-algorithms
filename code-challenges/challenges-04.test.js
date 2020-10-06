@@ -43,13 +43,14 @@ For example:
 const isNum = (input) => {
   // Solution code here...
   // tried this but it returned 'false' -> return input === [0-9] ? true : false;
-  // switched false/true and it worked but not sure why -> return input === [0-9] ? false : true;    
-  let numbers = /\d/g;
+  // switched false/true and it worked but not sure why -> return input === [0-9] ? false : true;
+  // found a different solution that I understand:     
+  let numbers = /\d/g;       // \d is equal to [0-9]
   return numbers.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 3
+CHALLENGE 3 - done! 
 
 Write a function named isCapitalized that takes in a string. This function should use a regular expression pattern to match all words that begin with a capital letter. It should only match words, not punctuation.
 
@@ -58,7 +59,11 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  // reference "the || operator actually returns the value of one of the specified operands, so if this operator is used with non-Boolean values, it will return a non-Boolean value." -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR
+  let bigWord = /\b[A-Z]+[a-z]+\b/g;
+  return str.match(bigWord) || [];    // return value of bigWord by using || operator
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -68,7 +73,17 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let aj = [];
+  let regex = /\b[A-J]+[a-z]+\b/g;
+  arr.forEach (input => {
+    if (regex.test(input)) {
+      aj.push(input);
+    }
+  });
+  return aj;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
