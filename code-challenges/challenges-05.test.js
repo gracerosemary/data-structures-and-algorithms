@@ -71,7 +71,7 @@ const howMuchPencil = (str) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 3
+CHALLENGE 3 - done!
 
 Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
 
@@ -80,6 +80,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  let newArray = arr.split('');
+  return newArray;
 };
 
 
