@@ -96,7 +96,7 @@ const getCourseKeys = (obj) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 3
+CHALLENGE 3 - done!
 
 Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
 ------------------------------------------------------------------------------------------------ */
@@ -104,6 +104,9 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.forEach( crib => {
+    houses.push(crib.house);
+  });
   return houses;
 };
 
