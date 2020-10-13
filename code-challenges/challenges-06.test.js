@@ -79,7 +79,7 @@ const templatingWithMustache = () => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 2
+CHALLENGE 2 - done!
 
 Write a function named getCourseKeys that takes in the courseInfo object and returns an array containing the keys for the courseInfo object.
 
@@ -92,6 +92,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
+  return Object.keys(courseInfo);
 };
 
 /* ------------------------------------------------------------------------------------------------
