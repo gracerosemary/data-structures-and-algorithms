@@ -86,9 +86,10 @@ const wordsToCharList = (arr) => {
 
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+CHALLENGE 4 - done
 
-You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
+You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, 
+>>> you only want a list of the item names.
 
 Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
 
@@ -129,6 +130,11 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach((item) => {
+    let removeNumber = item.slice(item.indexOf(' ')+1);  // slice - find 1 element, starting at position ' ' (space) +1element
+    let removeMeasure = removeNumber.slice(removeNumber.indexOf(' ')+1) // repeat slice on new array and remove measurement
+    result.push(removeMeasure);
+  })
   return result;
 };
 
