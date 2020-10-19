@@ -25,7 +25,7 @@ const addTea = () => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 2
+CHALLENGE 2 - done!
 
 Write a function named forLoopTwoToThe that, given an array of integers as input, iterates over the array and returns a new array. The returned array should contain the result of raising 2 to the power of the original input element.
 
@@ -36,6 +36,14 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in 
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow#:~:text=Description,(%20Math%20has%20no%20constructor).
+  let newArray = [];
+  // for (const [property] in [object])
+  for (let i in arr) {
+    newArray.push(Math.pow(2, arr[i]));
+  }
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
