@@ -62,13 +62,15 @@ const forEachTwoToThe = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+CHALLENGE 4 - done!
 
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 1 and your forEachTwoToThe function from challenge 2, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  let newArray = arr.map(number => Math.pow(2, number));
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
