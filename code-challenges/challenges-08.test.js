@@ -37,7 +37,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 const oddValues = (arr) => arr.filter( (val) => (val % 2));
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 3
+CHALLENGE 3 - done!
 
 Write a function named filterStringsWithVowels that, given an array of strings as input, uses filter to return an array with only words that contain vowels.
 
@@ -47,9 +47,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 ------------------------------------------------------------------------------------------------ */
 
 
-const filterStringsWithVowels = (arr) => {
-  // Solution code here...
-};
+const filterStringsWithVowels = (arr) => arr.filter(vowel => vowel.match(/[aeiou]/g));
 
 
 /* ------------------------------------------------------------------------------------------------
