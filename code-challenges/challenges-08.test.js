@@ -51,16 +51,17 @@ const filterStringsWithVowels = (arr) => arr.filter(vowel => vowel.match(/[aeiou
 
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+CHALLENGE 4 - done!
 
 Write a function named notInFirstArray that, given two arrays as input, uses filter to return an array of all the elements in the second array that are not included in the first array.
 
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-};
+// array returned is built by pushing values that evaluate & return true
+// !forbiddenValues - includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate
+
+const notInFirstArray = (forbiddenValues, arr) => arr.filter((val) => !forbiddenValues.includes(val));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
