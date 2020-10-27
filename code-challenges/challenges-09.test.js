@@ -179,7 +179,7 @@ function Event(obj){
 }
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 2
+CHALLENGE 2 - done!
 
 Write a function named countNumberOfElements that, given an array as input, uses reduce to count the number of elements in the array.
 
@@ -188,7 +188,12 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+  let results = arr.reduce( (acc) => {
+    return acc + 1;
+  }, 0);
+  return results;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
