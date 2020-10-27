@@ -1,7 +1,7 @@
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 1 - Review
+CHALLENGE 1 - Review - done!
 
 Build a simple express server. Connect a '/hello' route that sends a greeting of your  choice. Connect a '/aboutme' route that sends a short bio about you to the front-end. Finally, connect a '/favoritefoods' route that sends an array to the front-end of your favorite foods. All other routes should respond with a status of 404.
 ------------------------------------------------------------------------------------------------ */
@@ -38,7 +38,7 @@ const createServer = () => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 2
+CHALLENGE 2 - done!
 
 Write a function named count that, given an integer and an array of arrays, uses either filter, map, or reduce to count the amount of times the integer is present in the array of arrays.
 
@@ -49,6 +49,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  let n = 0;
+  input.filter( val => {
+    val.filter( val2 => {
+      if (target === val2) {
+        n++;
+      }
+    });
+  });
+  return n;
 };
 
 /* ------------------------------------------------------------------------------------------------
