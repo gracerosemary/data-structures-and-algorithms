@@ -61,7 +61,7 @@ const count = (target, input) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 3
+CHALLENGE 3 - done
 
 Write a function that, given an array of integer arrays as input, calculates the total sum of all the elements in the array.
 
@@ -72,6 +72,8 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  let sumTing = input.reduce((acc, val) => acc + val.reduce((acc2, val2) => acc2 + val2, 0), 0);
+  return sumTing;
 };
 
 /* ------------------------------------------------------------------------------------------------
