@@ -260,7 +260,7 @@ const returnNames = (arr) => {
   };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+CHALLENGE 4 - done!
 
 Write a function named reversedString that takes in a string and returns a string with the letters in reverse order.
 
@@ -269,6 +269,11 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  let arr = str.split('');
+  let reversed = arr.reduce( (newString, currentLetter) => {
+    return currentLetter + newString;
+  });
+  return reversed;
 };
 
 /* ------------------------------------------------------------------------------------------------
