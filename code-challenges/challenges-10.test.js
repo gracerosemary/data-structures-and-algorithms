@@ -77,7 +77,7 @@ const totalSum = (input) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+CHALLENGE 4 - done
 
 Write a function named divisibleByFiveTwoToThePower that accepts an array of arrays as input.
 
@@ -90,6 +90,11 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  return input.map(val => {
+    let highFive = val.filter(val2 => typeof(val2) ==='number' && val2 % 5 === 0);
+    let twoPowerful = highFive.map(val2 => Math.pow(2, val2));
+    return twoPowerful;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
