@@ -85,6 +85,17 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let treats = 0;
+  arr.forEach(stores => {
+    if (stores.store === 'Pet store') {
+      stores.items.forEach(items => {
+        if (items.name === 'Treats') {
+          treats = items.quantity;
+        }
+      });
+    }
+  });
+  return treats;
 };
 
 /* ------------------------------------------------------------------------------------------------
