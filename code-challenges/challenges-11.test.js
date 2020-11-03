@@ -50,7 +50,7 @@ const validateEmail = (email) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+CHALLENGE 4 - regex is so ugly, inside and out.
 
 Write a function named validatePhoneNumber that accepts a phone number and determines if it is valid.
 
@@ -72,6 +72,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  const regex = /^[(]\d{3}[)]\s\d{3}-\d{4}$|^[(]\d{3}[)]\d{3}\s\d{4}$|^\d{3}\s\d{3}-\d{4}$|^\d{3}-\d{7}$|^\d{3}-\d{3}\s\d{4}$|^\d{3}-\d{3}-\d{4}$|^\d{3}\s\d{3}\s\d{4}$|^\d{6}-\d{4}$|^\d{10}$|^\d{3}\s\d{7}$/g;
+  return regex.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
