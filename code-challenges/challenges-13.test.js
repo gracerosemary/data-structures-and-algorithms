@@ -43,7 +43,10 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  let find = arr.filter(happy => happy.includes(':)'));
+  return find;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
