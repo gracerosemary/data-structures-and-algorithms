@@ -117,10 +117,15 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  let heavy = arr.filter(weight => weight.mass > 77);
+  let combined = heavy.map(join => join.name);
+  let dash = combined.join(' - ');
+  return dash;
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+CHALLENGE 4 - this was tough. sorted by price and not name. used https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/ as reference. 
+
 Write a function named sortBy that takes in an array of objects, each of which has a particular property, and sorts those objects by that property, lowest to highest, returning the same array.
 
 Here is an example of the input:
@@ -133,9 +138,7 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBy = (property, arr) => {
-  // Solution code here...
-};
+const sortBy = (property, arr) => arr.sort((a,b) => a.price > b.price ? 1 : -1);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
