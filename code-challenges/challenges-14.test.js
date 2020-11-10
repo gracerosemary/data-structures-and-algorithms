@@ -124,7 +124,7 @@ let biggerThanLuke = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 4 - this was tough. sorted by price and not name. used https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/ as reference. 
+CHALLENGE 4 - this was tough. sorted by property - fails when singling out name or price. used https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/ as reference. 
 
 Write a function named sortBy that takes in an array of objects, each of which has a particular property, and sorts those objects by that property, lowest to highest, returning the same array.
 
@@ -138,7 +138,7 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBy = (property, arr) => arr.sort((a,b) => a.price > b.price ? 1 : -1);
+const sortBy = (property, arr) => arr.sort((a,b) => a[property] > b[property] ? 1 : -1);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
