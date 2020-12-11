@@ -3,20 +3,16 @@
 ## Language: `Python`
 
 # Reverse an Array
-Take in an array and return a reversed array.
+Insert and shift an array in middle at index
 
 ## Challenge
-1. Get Repo set up correctly
-2. Complete Whiteboard
-3. Submission
-Stretch: Code Features
+Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.  
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-For the whiteboard, we used draw.io and mapped out our layout for the problem domain, visual, algorithm, Big O, Pseudocode, Code, and Test.
+For the whiteboard, we used draw.io and mapped out our layout for the problem domain, visual, algorithm, Big O, Pseudocode, Code, and Test. Then we wrote out our tests and implemented our code.  
 
 ## Solution
-![Solution Image](assets/array_reverse.png)  
+![Solution Image](assets/array_shift.png)    
 
 ## Partner
-Sam Clark
+Ashley Casimir
