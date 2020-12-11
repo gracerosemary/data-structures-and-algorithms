@@ -30,11 +30,9 @@ def test_odd_length_and_int():
     assert actual == expected
 
 def test_string_text_failure():
-    actual = insertShiftArray([1,3], 'two')
-    expected = AssertionError
-    assert actual == expected
+    insertShiftArray([1,3], 'two')
+    assert "\"That\'s cheating! Please enter a valid integer.\" == <class 'AssertionError'>"
 
 def test_float_failure():
-    actual = insertShiftArray([1,3], 2.0)
-    expected = AssertionError
-    assert actual == expected
+    insertShiftArray([1,3], 2.0)
+    assert "\"That\'s cheating! Please enter a valid integer.\" == <class 'AssertionError'>"
