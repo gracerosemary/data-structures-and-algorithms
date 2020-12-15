@@ -11,6 +11,7 @@ Write a function called `BinarySearch` which takes in 2 parameters: a sorted arr
 For the whiteboard, we used draw.io and mapped out our layout for the problem domain, visual, algorithm, Big O, Pseudocode, Code, and Test. Then we wrote out our tests and implemented our code.  
 
 ## Solution
-![Solution Image](assets/[insertlink].png)    
+![Solution Image](assets/binary_search.png)    
 
 ## Partner
+Logan Jones
