@@ -15,7 +15,7 @@ Stretch: Code Features
 For the whiteboard, we used draw.io and mapped out our layout for the problem domain, visual, algorithm, Big O, Pseudocode, Code, and Test.
 
 ## Solution
-![Solution Image](assets/array_reverse.png)   
+![Solution Image](python/assets/array_reverse.png)   
 
 ## Partner
 Sam Clark

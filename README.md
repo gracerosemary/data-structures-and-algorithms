@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
 ### 401 Code Challenge Table of Contents
-1. [Reverse an Array](python/past_readMes/cc1.md)  
-2. [Shift an Array](python/README.md)  
-
+1. [Reverse an Array](python/code_challenges/array_reverse/README.md)  
+2. [Shift an Array](python/code_challenges/array_shift/README.md)   
+3. [Binary search in a sorted 1D Array](python/README.md)  
