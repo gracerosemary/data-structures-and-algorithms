@@ -3,7 +3,7 @@
 ## Language: `Python`
 
 # Linked List Implementation
-[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/linked-list/python/code_challenges/linked_list)    
+[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/code_challenges/linked_list)      
 
 ## Challenge
 1. Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
