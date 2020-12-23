@@ -72,18 +72,18 @@ class LinkedList:
 
     def insert_before(self, value, newVal):
         current_node = self.head
+        ll = LinkedList(current_node)
         if current_node.next is None:
             return "No Node Available"
-        ll = LinkedList(current_node)
         if ll.includes(value) is False:
             return "Value does not exist!"
-        while current_node.next is True:
+        if current_node.value == value:
+                current_node.next = Node(newVal, current_node.next)
+        while current_node.next is not None:
             if current_node.next.value == value:
                 current_node.next = Node(newVal, current_node.next)
             else:
                 current_node = current_node.next
-            
-
         
 
 if __name__ == "__main__":
@@ -99,8 +99,9 @@ if __name__ == "__main__":
     new_linked2.insert(2) 
     new_linked2.insert(3) 
     new_linked2.insert(4) 
-    print(new_linked2.includes(3))
-    print(new_linked2.insert_before(3, 10))
+    new_linked2.insert(6) 
+    # print(new_linked2.includes(3))
+    new_linked2.insert_before(6, 5)
     print(new_linked2) # to see the value of inserted value 2
 
     # # test includes
