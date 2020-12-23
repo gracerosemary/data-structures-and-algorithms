@@ -60,3 +60,22 @@ def test_str_collection():
     actual = str(ll)
     expected = "{a}->{b}->{c}->NULL"
     assert actual == expected
+
+def test_append_single_end():
+    ll = LinkedList()
+    ll.append_node(2)
+    actual = str(ll)
+    expected = "{2}->NULL"
+    assert actual == expected
+
+def test_append_mullitple_end():
+    ll = LinkedList()
+    ll.append_node(3)
+    ll.append_node(4)
+    ll.append_node(5)
+    actual = str(ll)
+    expected = "{3}->{4}->{5}->NULL"
+    assert actual == expected
+
+    
+
