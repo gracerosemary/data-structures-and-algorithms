@@ -5,5 +5,6 @@
 2. [Shift an Array](python/code_challenges/array_shift/README.md)   
 3. [Binary search in a sorted 1D Array](python/code_challenges/array_binary_search/README.md) 
 4. *Mock Interview*
-5. [Linked List Implementation](python/code_challenges/linked_list/README.md)  
-6. [Linked List Insertions](python/README.md)  
+5. [Linked List Implementation](python/code_challenges/linked_list/README5.md)  
+6. [Linked List Insertions](python/code_challenges/linked_list/README6.md) 
+7. [Linked List Kth Value From End](python/README.md)  

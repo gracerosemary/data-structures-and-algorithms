@@ -1,4 +1,4 @@
-import unittest
+import unittest, pytest
 from linked_list import LinkedList
 
 def test_import():
@@ -117,3 +117,43 @@ def test_insert_after_tail():
     actual = str(ll)
     expected = "{3}->{2}->{1}->NULL"
     assert actual == expected
+
+def test_kth_longer_length():
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    with pytest.raises(IndexError):
+        ll.kthFromEnd(3)
+
+def test_kth_same_length():
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    actual = ll.kthFromEnd(1)
+    expected = 2
+    assert actual == expected 
+
+def test_kth_negative():
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    with pytest.raises(ValueError):
+        ll.kthFromEnd(-1) 
+
+def test_kth_of_one():
+    ll = LinkedList()
+    ll.insert(1)
+    actual = ll.kthFromEnd(0)
+    expected = 1
+    assert actual == expected 
+
+def test_kth_happy_path():
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2) 
+    ll.insert(3) 
+    ll.insert(4) 
+    ll.insert(5) 
+    actual = ll.kthFromEnd(3)
+    expected = 4
+    assert actual == expected 
