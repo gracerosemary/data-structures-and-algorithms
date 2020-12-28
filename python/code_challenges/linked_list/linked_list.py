@@ -61,6 +61,11 @@ class LinkedList:
         return string_values
 
     def append_node(self, value):
+        """Adds a new node with the given value to the end of the list
+
+        Args:
+            value (int): value of new node
+        """
         new_node = Node(value, next=None)
         if self.head is not None:
             current = self.head
@@ -71,6 +76,15 @@ class LinkedList:
             self.head = new_node
 
     def insertBefore(self, value, newVal):
+        """Adds a new node with the given newVal immediately before the first value node
+
+        Args:
+            value (int): value of the node after the new node
+            newVal (int): value of the new node
+
+        Returns:
+            list: linked list with new node inserted
+        """
         current_node = self.head
         ll = LinkedList(current_node)
         if current_node is None:
@@ -87,6 +101,15 @@ class LinkedList:
             current_node = current_node.next
 
     def insertAfter(self, value, newVal):
+        """Adds a new node with the given newVal immediately after the first value node.
+
+        Args:
+            value (int): value of the node preceeding the new node
+            newVal (int): value of the new node
+
+        Returns:
+            list: linked list with new node inserted
+        """
         current_node = self.head
         ll = LinkedList(current_node)
         if ll.includes(value) is False:
@@ -96,6 +119,44 @@ class LinkedList:
                 current_node.next = Node(newVal, current_node.next) 
                 return None
             current_node = current_node.next
+
+    def kthFromEnd(self, k):
+        """Takes a number(k) and returns the node's value that is k from the end of the list.
+
+        Args:
+            k (int): number that represents x from the end of the list
+
+        Raises:
+            ValueError: negative numbers
+            IndexError: values exceeding length of the list
+
+        Returns:
+            int: node's value that is k fmor the end of the list
+        """
+        count = -1
+        follower = self.head
+        leader = self.head
+
+        if k < 0:
+            raise ValueError
+        if k == 0:
+            return self.head.value
+        if self.head is not None:
+            while count < k:
+                if leader is None:
+                    raise IndexError('Value is greater than the length of the list')
+                leader = leader.next
+                count += 1
+        if leader is None:
+            self.head = self.head.next
+            if self.head is not None:
+                return follower.value
+        else:
+            while leader is not None:
+                leader = leader.next
+                follower = follower.next
+            return follower.value
+
 
 if __name__ == "__main__":
     new_node = Node(1)
@@ -108,5 +169,5 @@ if __name__ == "__main__":
     new_linked2.insert(3) 
     new_linked2.insert(4) 
     new_linked2.insert(6) 
-    new_linked2.insertAfter(6, 5)
+    print(new_linked2.kthFromEnd(3))
     print(new_linked2)  
