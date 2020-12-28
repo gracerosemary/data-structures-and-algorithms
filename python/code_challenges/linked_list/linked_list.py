@@ -70,47 +70,43 @@ class LinkedList:
         else:
             self.head = new_node
 
-    def insert_before(self, value, newVal):
+    def insertBefore(self, value, newVal):
         current_node = self.head
         ll = LinkedList(current_node)
-        if current_node.next is None:
+        if current_node is None:
             return "No Node Available"
         if ll.includes(value) is False:
             return "Value does not exist!"
-        if current_node.value == value:
+        if current_node.value is value:
+            ll.insert(newVal)
+            return None
+        while current_node is not None:
+            if current_node.next.value is value:
                 current_node.next = Node(newVal, current_node.next)
-        while current_node.next is not None:
-            if current_node.next.value == value:
-                current_node.next = Node(newVal, current_node.next)
-            else:
-                current_node = current_node.next
-        
+                return None
+            current_node = current_node.next
+
+    def insertAfter(self, value, newVal):
+        current_node = self.head
+        ll = LinkedList(current_node)
+        if ll.includes(value) is False:
+            return "Value does not exist!"
+        while current_node is not None:
+            if current_node.value == value:
+                current_node.next = Node(newVal, current_node.next) 
+                return None
+            current_node = current_node.next
 
 if __name__ == "__main__":
     new_node = Node(1)
     new_linked = LinkedList()
-    # print(new_linked)
-
     new_linked1 = LinkedList(new_node)
-    # print(new_linked1.head.value) # to see the value of 1
 
-    # test insert method
+    # test 
     new_linked2 = LinkedList(new_node)
     new_linked2.insert(2) 
     new_linked2.insert(3) 
     new_linked2.insert(4) 
     new_linked2.insert(6) 
-    # print(new_linked2.includes(3))
-    new_linked2.insert_before(6, 5)
-    print(new_linked2) # to see the value of inserted value 2
-
-    # # test includes
-    # new_linked1 = LinkedList(new_node)
-    # new_linked1.insert(2) 
-    # # print(new_linked1.includes(2))
-    # # print(new_linked1.includes(5))
-    # print(new_linked1.head.value) # to see if it includes values (boolean)
-
-    # new_linked2 = LinkedList(new_node)
-    # print(new_linked2.insert_before(1, 10))
-    # print(new_linked2) 
+    new_linked2.insertAfter(6, 5)
+    print(new_linked2)  

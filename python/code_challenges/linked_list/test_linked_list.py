@@ -77,14 +77,43 @@ def test_append_mullitple_end():
     expected = "{3}->{4}->{5}->NULL"
     assert actual == expected
 
+def test_insert_before_head():
+    ll = LinkedList()
+    ll.insert(1) 
+    ll.insert(3) 
+    ll.insert(4) 
+    ll.insertBefore(1, 2)
+    actual = str(ll)
+    expected = "{4}->{3}->{2}->{1}->NULL"
+    assert actual == expected
+
 def test_insert_before_middle():
     ll = LinkedList()
     ll.insert(2) 
     ll.insert(3) 
     ll.insert(4) 
     ll.insert(6) 
-    ll.insert_before(6, 5)
+    ll.insertBefore(4, 5)
     actual = str(ll)
     expected = "{6}->{5}->{4}->{3}->{2}->NULL"
     assert actual == expected
 
+def test_insert_after_middle():
+    ll = LinkedList()
+    ll.insert(2) 
+    ll.insert(3) 
+    ll.insert(4) 
+    ll.insert(6) 
+    ll.insertAfter(6, 5)
+    actual = str(ll)
+    expected = "{6}->{5}->{4}->{3}->{2}->NULL"
+    assert actual == expected
+
+def test_insert_after_tail():
+    ll = LinkedList()
+    ll.insert(2) 
+    ll.insert(3) 
+    ll.insertAfter(2, 1)
+    actual = str(ll)
+    expected = "{3}->{2}->{1}->NULL"
+    assert actual == expected
