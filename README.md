@@ -7,4 +7,5 @@
 4. *Mock Interview*
 5. [Linked List Implementation](python/code_challenges/linked_list/README5.md)  
 6. [Linked List Insertions](python/code_challenges/linked_list/README6.md) 
-7. [Linked List Kth Value From End](python/README.md)  
+7. [Linked List Kth Value From End](python/code_challenges/linked_list/README7.md)    
+8. [Zipped Linked List](python/README.md)  

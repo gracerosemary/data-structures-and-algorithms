@@ -120,6 +120,18 @@ class LinkedList:
                 return None
             current_node = current_node.next
 
+        # # roger's solution:
+        # current = self.head
+        # # do i have a current?
+        # while current:
+        #     if current.value == value:
+        #         node = Node(newVal, current_node.next)
+        #         current.next = node 
+        #         return
+        #     current = current.next
+        # return "Not in list"
+
+
     def kthFromEnd(self, k):
         """Takes a number(k) and returns the node's value that is k from the end of the list.
 
@@ -131,7 +143,7 @@ class LinkedList:
             IndexError: values exceeding length of the list
 
         Returns:
-            int: node's value that is k fmor the end of the list
+            int: node's value that is k from the end of the list
         """
         count = -1
         follower = self.head
@@ -157,6 +169,43 @@ class LinkedList:
                 follower = follower.next
             return follower.value
 
+        # # Logan's solution:
+        # current = self.head
+        # newList = []
+        # while current:
+        #     newList.append(current.value)
+        #     current = current.next
+        # size = len(newList)
+        # if k < size:
+        #     return newList[size -k -1].value
+        # raise Exception()
+
+        # # Dario's solution 1:
+        # current = self.head
+        # newList = []
+        # while current:
+        #     newList.append(current.value)
+        #     current = current.next
+        # if len(newList) < k:
+        #     print("Index out of bounds")
+        # else: 
+        #     newList[-k -1]
+
+        # # Dario's solution 2 - doesnt work when testing:
+        # paces_behind = 0
+        # leader = self.head
+        # follower = None
+        # while leader: # we have not hit None
+        #     leader = leader.next # we need to move the leader forward one node to eventually get to the tail
+        #     if follower: # only move the follower if it is not a None value
+        #         follower = follower.next
+        #     elif paces_behind == k: # once the leader has reached the paces_behind count, we can start moving the follower
+        #         follower = self.head 
+        #     else: # increment the paces_behind count for the iteration
+        #         paces_behind += 1
+        # if not follower:
+        #     raise ValueError
+        # return follower.value
 
 if __name__ == "__main__":
     new_node = Node(1)
@@ -169,5 +218,5 @@ if __name__ == "__main__":
     new_linked2.insert(3) 
     new_linked2.insert(4) 
     new_linked2.insert(6) 
-    print(new_linked2.kthFromEnd(3))
+    print(new_linked2.kthFromEnd(5))
     print(new_linked2)  
