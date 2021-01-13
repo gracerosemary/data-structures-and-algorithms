@@ -50,3 +50,19 @@ def test_one_empty_list():
   expected = "{1}->{2}->NULL"
   assert actual == expected
 
+def test_linked_list_zip_list1_longer():
+    ll1 = LinkedList()
+    ll1.append_node(1)
+    ll1.append_node(3)
+    ll1.append_node(2)
+    ll2 = LinkedList()
+    ll2.append_node(5)
+    ll2.append_node(9)
+    expected = LinkedList()
+    expected.append_node(1)
+    expected.append_node(5)
+    expected.append_node(3)
+    expected.append_node(9)   
+    expected.append_node(2)
+    actual = zipLists(ll1, ll2)
+    assert str(actual) == str(expected)
