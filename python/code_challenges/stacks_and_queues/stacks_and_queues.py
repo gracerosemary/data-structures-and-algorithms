@@ -53,12 +53,6 @@ class Queue():
         temp.next = None
         return temp.value
 
-    def front(self):
-        pass
-
-    def rear(self):
-        pass
-
     def peek(self):
         if self.is_empty():
             raise InvalidOperationError("Method not allowed on empty collection")
