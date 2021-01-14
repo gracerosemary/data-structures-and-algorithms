@@ -18,19 +18,23 @@ class Stack():
     def pop(self):
         if self.is_empty():
             raise InvalidOperationError("Method not allowed on empty collection")
-        node = self.top
-        self.top = self.top.next
-        print(node.value)
-        return node.value
+        if self.top:
+            node = self.top
+            self.top = self.top.next
+            node.next = None
+            return node.value
 
     def is_empty(self):
-        return self.top == None
-        # return True
+        if self.top is None:
+            return True
+        else:
+            return False
 
     def peek(self):
         if self.is_empty():
             raise InvalidOperationError("Method not allowed on empty collection")
-        return self.top.value
+        else:
+            return self.top.value
 
 class Queue():
     def __init__(self, front = None):
@@ -56,13 +60,18 @@ class Queue():
     def peek(self):
         if self.is_empty():
             raise InvalidOperationError("Method not allowed on empty collection")
-        return self.front.value
+        else:
+            return self.front.value
 
     def is_empty(self):
-        return self.front == None
+        # return self.front == None
+        if self.front is None:
+            return True
+        else:
+            return False
 
 if __name__ == "__main__":
-    new_node = Node("apple")
-    stack = Stack(new_node)
-    print(stack)
-
+    # new_node = Node("apple")
+    # stack = Stack(new_node)
+    # print(stack)
+    pass
