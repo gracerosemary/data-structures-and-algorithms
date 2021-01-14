@@ -9,4 +9,5 @@
 6. [Linked List Insertions](python/code_challenges/linked_list/README6.md) 
 7. [Linked List Kth Value From End](python/code_challenges/linked_list/README7.md)    
 8. [Zipped Linked List](python/code_challenges/ll_zip/README8.md)  
-9. [Stacks and Queues](python/README.md)   
+9. [Stacks and Queues](python/code_challenges/stacks_and_queues/readme.md)  
+10. [Queue with Stacks](python/README.md) 
