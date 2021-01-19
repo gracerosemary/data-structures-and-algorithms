@@ -2,11 +2,15 @@ class InvalidOperationError(BaseException):
     pass
 
 class Node():
+    """Class Node
+    """
     def __init__(self, value, next = None):
         self.value = value
         self.next = next
 
 class Stack():
+    """Class Stack
+    """
     def __init__(self, node = None):
         self.top = node
 
