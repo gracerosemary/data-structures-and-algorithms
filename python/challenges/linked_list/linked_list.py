@@ -207,6 +207,22 @@ class LinkedList:
         #     raise ValueError
         # return follower.value
 
+    def evens(self, ll):
+        evens = []
+        total = 0
+        current = ll.head
+        if not ll.head:
+            return tuple()
+        while current:
+            if current.value % 2 == 0:
+                evens.append(current.value)
+            total += current.value
+            current = current.next
+
+        evens.append(total)
+        return tuple(evens)
+        
+
 if __name__ == "__main__":
     new_node = Node(1)
     new_linked = LinkedList()
@@ -214,9 +230,10 @@ if __name__ == "__main__":
 
     # test 
     new_linked2 = LinkedList(new_node)
-    new_linked2.insert(2) 
-    new_linked2.insert(3) 
-    new_linked2.insert(4) 
-    new_linked2.insert(6) 
-    print(new_linked2.kthFromEnd(5))
-    print(new_linked2)  
+    new_linked2.append_node(5) 
+    new_linked2.append_node(3) 
+    new_linked2.append_node(9) 
+    new_linked2.append_node(7) 
+    # print(new_linked2.kthFromEnd(5))
+    # print(new_linked2)  
+    print(new_linked2.evens(new_linked1))
