@@ -87,3 +87,22 @@ def test_postorder_mult():
     actual = bstree.postOrder()
     expected = [100, 300, 200]
     assert actual == expected 
+
+# find max value of Binary Tree
+def test_max_value_one():
+    tree = BinaryTree(Node(10))
+    actual = tree.findMaximumValue()
+    expected = 10
+    assert actual == expected
+
+def test_max_value_mult():
+    tree = BinaryTree(Node(10))
+    b = Node(11)
+    c = Node(2)
+    d = Node(100)
+    tree.root.left = b
+    tree.root.right = c
+    tree.root.left.left = d
+    actual = tree.findMaximumValue()
+    expected = 100
+    assert actual == expected
