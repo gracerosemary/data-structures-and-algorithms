@@ -1,11 +1,11 @@
 class Node:
     """Node Class
     """
-    def __init__(self, value = None, left = None, right = None):
+    def __init__(self, value, left = None, right = None):
         """Instantiate Node class 
 
         Args:
-            value (str|int, optional): Value of the node. Defaults to None.
+            value (str|int, optional): Value of the node.
             left (str|int, optional): Left of node. Defaults to None.
             right (str|int, optional): Right of node. Defaults to None.
         """
@@ -75,6 +75,19 @@ class BinaryTree:
         traverse(self.root)
         return collection
 
+    def findMaximumValue(self):
+        maximum = 0
+        def traverse(root):
+            nonlocal maximum
+            if root.value > maximum:
+                maximum = root.value
+            if root.left:
+                traverse(root.left)
+            if root.right:
+                traverse(root.right)
+        traverse(self.root)
+        return maximum
+
 class BinarySearchTree(BinaryTree):
     """Binary Search Tree Class that inherits from Binary Tree Class
 
@@ -96,7 +109,7 @@ class BinarySearchTree(BinaryTree):
         while root:
             if root.value == value:
                 return True
-            if root.value < value:
+            if root.value > value:
                 root = root.left
             else:
                 root = root.right
@@ -129,14 +142,22 @@ class BinarySearchTree(BinaryTree):
                     print(node.value)
                     return
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
     # b = Node("B")
     # c = Node("C")
     # d = Node("D")
     # e = Node("E")
     # f = Node("F")
 
-    # tree = BinaryTree(Node("A"))
+    # tree = BinaryTree(Node(10))
+    # b = Node(11)
+    # c = Node(2)
+    # d = Node(100)
+    # tree.root.left = b
+    # tree.root.right = c
+    # tree.root.left.left = d
+    # print(tree.findMaximumValue())
+
     # tree.root.left = b
     # tree.root.right = c
     # b.left = d
@@ -149,6 +170,7 @@ class BinarySearchTree(BinaryTree):
     # tree.inOrder()
     # tree.preOrder()
     # tree.postOrder()
+
 
     # bstree = BinarySearchTree(Node("A"))
     # print(bstree.contains("B"))
