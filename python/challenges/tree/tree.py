@@ -96,7 +96,7 @@ class BinarySearchTree(BinaryTree):
         while root:
             if root.value == value:
                 return True
-            if root.value < value:
+            if root.value > value:
                 root = root.left
             else:
                 root = root.right
@@ -150,7 +150,7 @@ class BinarySearchTree(BinaryTree):
     # tree.preOrder()
     # tree.postOrder()
 
-    # bstree = BinarySearchTree(Node("A"))
+    bstree = BinarySearchTree(Node("A"))
     # print(bstree.contains("B"))
 
     # bstree = BinarySearchTree(Node(5))
