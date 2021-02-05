@@ -106,3 +106,40 @@ def test_max_value_mult():
     actual = tree.findMaximumValue()
     expected = 100
     assert actual == expected
+
+# breadth first
+def test_breadth_first_one():
+    tree = BinaryTree(Node(10))
+    actual = tree.breadth_first()
+    expected = [10]
+    assert actual == expected 
+
+def test_breadth_first_even():
+    tree = BinaryTree(Node(10))
+    b = Node(11)
+    c = Node(2)
+    d = Node(100)
+    e = Node(42)
+    tree.root.left = b
+    tree.root.right = c
+    tree.root.left.left = d
+    tree.root.right.right = e
+    actual = tree.breadth_first()
+    expected = [10, 11, 2, 100, 42]
+    assert actual == expected 
+
+def test_breadth_first_odd():
+    tree = BinaryTree(Node(10))
+    b = Node(11)
+    c = Node(2)
+    d = Node(100)
+    e = Node(42)
+    f = Node(1000)
+    tree.root.left = b
+    tree.root.right = c
+    tree.root.left.left = d
+    tree.root.right.right = e
+    tree.root.right.right.right = f
+    actual = tree.breadth_first()
+    expected = [10, 11, 2, 100, 42, 1000]
+    assert actual == expected 

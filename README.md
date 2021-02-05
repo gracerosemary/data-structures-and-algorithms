@@ -13,4 +13,6 @@
 10. [Queue with Stacks](python/challenges/queue_with_stacks/readme.md)  
 11. [Animal Shelter](python/challenges/queue_with_stacks/readme.md) 
 12. [Multi-Bracket Validation](python/challenges/multi_bracket_validation/readme.md)   
-15. [Binary Tree and BST Implementation](python/README.md)   
+15. [Binary Tree and BST Implementation](python/tree/readme1.md)   
+16. [BT - Find Max Value](python/tree/readme2.md)    
+17. [Breadth First](python/README.md)  
