@@ -12,6 +12,38 @@ class Node:
         self.value = value
         self.left = left
         self.right = right
+        self.next = None
+
+class Queue():
+    def __init__(self, front = None):
+        self.front = None
+        self.rear = None
+
+    def enqueue(self, value):
+        node = Node(value)
+        if self.is_empty():
+            self.front = node
+            self.rear = node
+        else:
+            self.rear.next = node
+            self.rear = node 
+
+    def dequeue(self):
+        if not self.is_empty():
+            temp = self.front
+            self.front = self.front.next
+            temp.next = None
+            return temp.value
+
+    def peek(self):
+        if not self.is_empty():
+            return self.front.value
+
+    def is_empty(self):
+        if self.front is None:
+            return True
+        else:
+            return False
 
 class BinaryTree:
     """Binary Tree Class
@@ -93,6 +125,19 @@ class BinaryTree:
         traverse(self.root)
         return maximum
 
+    def breadth_first(self):
+        final_list = []
+        queue = Queue()
+        queue.enqueue(self.root)
+        while not queue.is_empty():
+            current = queue.dequeue()
+            final_list.append(current.value)
+            if current.left:
+                queue.enqueue(current.left)
+            if current.right:
+                queue.enqueue(current.right)
+        return final_list
+
 class BinarySearchTree(BinaryTree):
     """Binary Search Tree Class that inherits from Binary Tree Class
 
@@ -154,14 +199,14 @@ if __name__ == "__main__":
     # e = Node("E")
     # f = Node("F")
 
-    # tree = BinaryTree(Node(10))
-    # b = Node(11)
-    # c = Node(2)
-    # d = Node(100)
-    # tree.root.left = b
-    # tree.root.right = c
-    # tree.root.left.left = d
-    # print(tree.findMaximumValue())
+    tree = BinaryTree(Node(10))
+    b = Node(11)
+    c = Node(2)
+    d = Node(100)
+    tree.root.left = b
+    tree.root.right = c
+    tree.root.left.left = d
+    print(tree.breadth_first())
 
     # tree.root.left = b
     # tree.root.right = c
@@ -176,7 +221,6 @@ if __name__ == "__main__":
     # tree.preOrder()
     # tree.postOrder()
 
-
     # bstree = BinarySearchTree(Node("A"))
     # print(bstree.contains("B"))
 
@@ -185,3 +229,6 @@ if __name__ == "__main__":
     # print(bstree.add(6))
     # print(bstree.add(3))
     # print(bstree.contains(5))
+
+
+    # pass
