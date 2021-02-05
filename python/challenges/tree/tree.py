@@ -126,6 +126,11 @@ class BinaryTree:
         return maximum
 
     def breadth_first(self):
+        """Breadth first traversal (by rows)
+
+        Returns:
+            list: list of node values in breadth first order 
+        """
         final_list = []
         queue = Queue()
         queue.enqueue(self.root)
@@ -192,21 +197,21 @@ class BinarySearchTree(BinaryTree):
                     print(node.value)
                     return
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # b = Node("B")
     # c = Node("C")
     # d = Node("D")
     # e = Node("E")
     # f = Node("F")
 
-    tree = BinaryTree(Node(10))
-    b = Node(11)
-    c = Node(2)
-    d = Node(100)
-    tree.root.left = b
-    tree.root.right = c
-    tree.root.left.left = d
-    print(tree.breadth_first())
+    # tree = BinaryTree(Node(10))
+    # b = Node(11)
+    # c = Node(2)
+    # d = Node(100)
+    # tree.root.left = b
+    # tree.root.right = c
+    # tree.root.left.left = d
+    # print(tree.breadth_first())
 
     # tree.root.left = b
     # tree.root.right = c
