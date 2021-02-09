@@ -2,16 +2,25 @@
 
 ## Language: `Python`
 
-# Binary Tree - Find Max Value
-[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/challenges/tree)      
+# Binary Tree - FizzBuzz edition
+[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/challenges/fizz_buzz_tree)      
 
 ## Challenge
-Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+1. Write a function called `fizzbuzztree` which takes binary tree as argument.  
+2. Determine whether or not the vlaue of each node is divisible by 3, 5, or both.  
+3. Create a new tree with the same structure as the original tree but with modified values:  
+      - if value is % 3, replace value with “Fizz”  
+      - if value is % 5, replace value with “Buzz”  
+      - if divisible by both, replace with “FizzBuzz”  
+      - if not divisible, turn the number into a String  
+ 4. Return the new tree  
 
 ## Tests
-Output a list for a tree with 1 node. 
-Output a list for a tree with even number of nodes. 
-Output a list for a tree with odd number of nodes. 
+Output a list for FizzBuzz. 
+Output a list for Fizz. 
+Output a list for Buzz. 
+Output a list for String. 
+Exception for empty tree. 
 
 ## Approach & Efficiency
 time: O(n) - needs to traverse through 'n' nodes
@@ -23,15 +32,8 @@ Node class:
 
 BinaryTree class:
 - `init`: instantiate with constructors
-- `preOrder`: Root >> Left >> Right
-- `inOrder`: Left >> Root >> Right
-- `postOrder`: Left >> Right >> Root
-- `findMaximumValue`: returns max value in Binary Tree
-- `breadth_first`: takes in a binary tree and returns a list
-
-BinarySearchTree class:
-- `contains`: Returns True if value is in the tree, otherwise False
-- `add`: Accepts a value and adds a new node with the specified value in the correct location
+- `change_vals`: changes the value of the node based on if it's divisible by 3, 5, or both.  
+- `fizzbuzztree`: traverses the tree and appends new values to a list before returning the list.  
 
 ## Solution
-![Solution Image](assets/breadth.png)  
+![Solution Image](assets/fizzbuzz.png)   
