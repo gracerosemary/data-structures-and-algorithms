@@ -197,7 +197,41 @@ class BinarySearchTree(BinaryTree):
                     print(node.value)
                     return
 
-# if __name__ == "__main__":
+    def sumOdds(self):
+        collection = []
+        def traverse(root):
+            if root is not None:
+                traverse(root.left)
+                if (root.value % 2 != 0):
+                    collection.append(root.value)
+                traverse(root.right)
+        traverse(self.root)
+        total = 0
+        for odd in range(len(collection)):
+            total += collection[odd]
+        return total
+
+    
+
+if __name__ == "__main__":
+    # tree = BinaryTree(Node(5))
+    # b = Node(11)
+    # c = Node(2)
+    # d = Node(100)
+    # tree.root.left = b
+    # tree.root.right = c
+    # tree.root.left.left = d
+    # tree2 = BinaryTree(Node(6))
+    # b = Node(11)
+    # c = Node(2)
+    # d = Node(100)
+    # tree2.root.left = b
+    # tree2.root.right = c
+    # tree2.root.left.left = d
+    # # print(bstree.contains(5))
+    # # print(bstree.file_count(bstree, bstree2))
+    # print(tree.compare_leaves(tree, tree2))
+
     # b = Node("B")
     # c = Node("C")
     # d = Node("D")
@@ -236,4 +270,4 @@ class BinarySearchTree(BinaryTree):
     # print(bstree.contains(5))
 
 
-    # pass
+    pass

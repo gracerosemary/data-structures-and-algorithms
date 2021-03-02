@@ -2,38 +2,25 @@
 
 ## Language: `Python`
 
-# Binary Tree - FizzBuzz edition
-[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/challenges/fizz_buzz_tree)      
+# Insertion Sort
+[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/challenges/insertion_sort)       
 
 ## Challenge
-1. Write a function called `fizzbuzztree` which takes binary tree as argument.  
-2. Determine whether or not the vlaue of each node is divisible by 3, 5, or both.  
-3. Create a new tree with the same structure as the original tree but with modified values:  
-      - if value is % 3, replace value with “Fizz”  
-      - if value is % 5, replace value with “Buzz”  
-      - if divisible by both, replace with “FizzBuzz”  
-      - if not divisible, turn the number into a String  
- 4. Return the new tree  
+Review given pseudocode and create a blog article with a step-through process visualized.
 
 ## Tests
-Output a list for FizzBuzz. 
-Output a list for Fizz. 
-Output a list for Buzz. 
-Output a list for String. 
-Exception for empty tree. 
+- Sort given array
+- Sort reverse-sorted
+- Sort few uniques
+- Sort nearly sorted
 
 ## Approach & Efficiency
-time: O(n) - needs to traverse through 'n' nodes
-space: O(1) - traversing through tree does not need any additional space allocation
+Big O Time: O(n*2)  
+- Worst case scenario, integers are sorted in reverse order, which would take the max time.
+- Best case scenario, Big O would be O(1) because the array is already sorted.
 
-## API
-Node class:
-- `init`: instantiate with constructors
+Big O Space: O(1)
+- Same number of pointers used, regardless of list size
 
-BinaryTree class:
-- `init`: instantiate with constructors
-- `change_vals`: changes the value of the node based on if it's divisible by 3, 5, or both.  
-- `fizzbuzztree`: traverses the tree and appends new values to a list before returning the list.  
-
-## Solution
-![Solution Image](assets/fizzbuzz.png)   
+## Blog
+[Click here to be directed to the blog](challenges/insertion_sort/BLOG.md)  
