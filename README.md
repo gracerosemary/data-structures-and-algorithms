@@ -15,5 +15,6 @@
 12. [Multi-Bracket Validation](python/challenges/multi_bracket_validation/readme.md)   
 15. [Binary Tree and BST Implementation](python/tree/readme1.md)   
 16. [BT - Find Max Value](python/tree/readme2.md)    
-17. [Breadth First]((python/tree/readme3.md)   
-18. [FizzBuzz](python/README.md)  
+17. [Breadth First](python/tree/readme3.md)   
+18. [FizzBuzz](python/fizz_buzz_tree/README.md)  
+19. [Insertion Sort](python/README.md)  
