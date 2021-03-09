@@ -1,12 +1,5 @@
-# Insertion Sort
-Insertion Sort is a sorting algorithm. Given an array, the algorithm takes the values of the array and places them in the correct position. 
-____
-## Algorithm
-- InsertionSort is a method that sorts the values in an array, in ascending order. It takes in an array of integers.
-- Iterate, starting at index 1 through the length of the array.
-- Compare the current int to the previous int.
-- If the current int is less than the previous int, compare it to the ints that come before the previous int.
-- Move the int with the bigger value to the next index position so that it can be swapped with the int of smaller value.
+# Quick Sort
+Quick Sort is a sorting algorithm. Given an array, the algorithm takes the values of the array and places them in the correct position. 
 ____
 ## Psuedo Code
 ```
@@ -45,214 +38,184 @@ ____
 ## Trace
 Sample Array: `[8,4,23,42,16,15]`
 
-### Pass 1:
-int_arr = [8,4,23,42,16,15]
+arr = [8,4,23,42,16,15]  
 
-**Original List:**
+**Original Array:**
 | Index | 0 | 1 | 2 | 3 | 4 | 5 |  
 | ----- | - | - | - | - | - | - |  
 | Value | 8 | 4 | 23 | 42 | 16 | 15 | 
 
-```
-int_arr[j+1] = int_arr[j]
-# int_arr[0+1] = int_arr[0]
-# int_arr[1] = int_arr[0]
-# index 0 will hold the same value as index 1
-```
-> variables + current values:   
-i = 1  
-j = 0   
-temp = 4   
+|-ONE-------------- **Partition(arr, left, right):** -------------------|  
 
-**New List:**
+**Starting Postitions:**  
+left: 0  
+    - lowest index
+right: 5
+    - highest index  
+pivot: arr[right] --> arr[5] --> 15
+
+**Initialize index of smaller element (low):**  
+low: (left-1) --> (0-1) --> -1  
+
+**Traverse elements from left to right:**  
+index: 0   
+> If arr[i] <= pivot:
+- Is 8 <= 15? 
+    - Yes. Increment `low` and then `swap(arr, i, low)`
+
+low: (-1 + 1) --> 0
+
+|-TWO------------------- **Swap(arr, i, low):** ----------------------|  
+
+1. temp = 0  
+2. temp = arr[i]  
+    - temp = 8  
+3. arr[i] = arr[low]
+    - arr[i] = 8 
+4. arr[low] = temp
+    - arr[low] = 8
+
+** No changes to the array because arr[i] and arr[low] are the same
+
+|-THREE-------------- **Partition(arr, left, right):** ------------------|  
+
+index: 1  
+- Is 4 <= 15? 
+    - Yes. Increment `low` and then `swap(arr, i, low)`
+
+low: (0 + 1) --> 1    
+
+|-FOUR-------------------- **Swap(arr, i, low):** ----------------------|
+
+1. temp = 0  
+2. temp = arr[i]  
+    - temp = 4  
+3. arr[i] = arr[low]
+    - arr[i] = 4 
+4. arr[low] = temp
+    - arr[low] = 4
+
+** No changes to the array because arr[i] and arr[low] are the same
+
+|-FIVE-------------- **Partition(arr, left, right):** ---------------------|  
+
+index: 2  
+- Is 23 <= 15? 
+    - No. Do nothing.  
+
+|-SIX-------------- **Partition(arr, left, right):** ----------------------|  
+
+index: 3    
+- Is 42 <= 15? 
+    - No. Do nothing.  
+
+|-SEVEN-------------- **Partition(arr, left, right):** -------------------|  
+
+index: 4  
+- Is 16 <= 15? 
+    - No. Do nothing.   
+
+|-EIGHT--------------- **Partition(arr, left, right):** -------------------|  
+
+index: 5  
+- Is 15 <= 15? 
+    - Yes. Increment `low` and then `swap(arr, i, low)`   
+
+low: (1 + 1) --> 2       
+
+1. temp = 0  
+2. temp = arr[i]  
+    - temp = 15    
+3. arr[i] = arr[low]
+    - arr[i] = 2    
+4. arr[low] = temp
+    - arr[low] = 15  
+
+
+|-NINE------------------- **Swap(arr, right, low+1):** --------------------|
+
+**Current Postitions:**  
+right: 5  
+low: (1 + 1) --> 2  
+
+`swap(arr, 5, 2)`
+
+**New Array after swapping position 2 and 5:**
+
 | Index | 0 | 1 | 2 | 3 | 4 | 5 |  
 | ----- | - | - | - | - | - | - |  
-| Value | 8 | 8 | 23 | 42 | 16 | 15 | 
+| Value | 8 | 4 | 15 | 42 | 16 | 23 | 
 
-```
-j -= 1
-```
+**Return low + 1:**  
+low + 1 --> 1 + 1 --> 2   
+    - this value is `part`  
 
-> variables + current values:   
-i = 1  
-j = -1  
-temp = 4 
+|-TEN------------------ **Quick Sort(arr, left, right):** --------------------|  
+**Current Postitions:**    
+left: 0    
+right: 5     
+part: 2   
 
-**Ending List:**
+Since left < right:
+part: 2    
+
+|-ELEVEN-------------- **Quick Sort(arr, left, part-1):** --------------------|  
+**Current Postitions:**    
+left: 0    
+right(or part-1): 1  
+
+Since left < part-1:
+go through partition  
+
+|-TWELVE-------------- **Partition(arr, left, right):** ------------------------|  
+
+**Starting Postitions:**  
+left: 0  
+right: 1  
+pivot: 4  
+
+**Initialize index of smaller element (low):**  
+low: -1  
+
+**Traverse elements from left to right:**  
+index: 0   
+> If arr[i] <= pivot:
+- Is 8 <= 15? 
+    - Yes. Increment `low` and then `swap(arr, i, low)`
+
+low: (-1 + 1) --> 0
+
+|----------------------------**REPEATING-STEPS**--------------------------|  
+Repeat steps 2-10 until all elements in list have been iterated through partition and swap. 
+
+**Resulting Arrays:**  
+
+**Swapping position 1 & 2**:  
 | Index | 0 | 1 | 2 | 3 | 4 | 5 |  
 | ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 23 | 42 | 16 | 15 | 
+| Value | 4 | 8 | 15 | 42 | 16 | 23 | 
 
-____
-### Pass 2:
-int_arr = [4,8,23,42,16,15]
-
-**Original List:**
+**Swapping position 3 & 4**:  
 | Index | 0 | 1 | 2 | 3 | 4 | 5 |  
 | ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 23 | 42 | 16 | 15 | 
+| Value | 4 | 8 | 15 | 16 | 42 | 23 | 
 
-> variables + current values:   
-i = 2  
-j = 1   
-temp = 23   
-
-**New List:**
+**Swapping position 4 & 5**:  
 | Index | 0 | 1 | 2 | 3 | 4 | 5 |  
 | ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 23 | 42 | 16 | 15 | 
+| Value | 4 | 8 | 15 | 16 | 23 | 42 |  
 
-> variables + current values:   
-i = 2    
-j = 1   
-temp = 23   
-
-**Ending List:**
+|--------------------------------**FINAL-ARRAY**-----------------------------|
 | Index | 0 | 1 | 2 | 3 | 4 | 5 |  
 | ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 23 | 42 | 16 | 15 | 
-____
-### Pass 3:
-int_arr = [4,8,23,42,16,15]
-
-**Original List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 23 | 42 | 16 | 15 | 
-
-> variables + current values:   
-i = 3  
-j = 2   
-temp = 42   
-
-**New List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 23 | 42 | 16 | 15 | 
-
-> variables + current values:   
-i = 3   
-j = 2    
-temp = 42    
-
-**Ending List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 23 | 42 | 16 | 15 | 
-____
-### Pass 4:
-int_arr = [4,8,23,42,16,15]
-
-**Original List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 23 | 42 | 16 | 15 | 
-
-> variables + current values:   
-i = 4  
-j = 3    
-temp = 16   
-
-**New List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 23 | 42 | 42 | 15 | 
-
-> variables + current values:   
-i = 4     
-j = 2        
-temp = 16      
-
-**New List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 23 | 23 | 42 | 15 | 
-
-> variables + current values:   
-i = 4     
-j = 1          
-temp = 16      
-
-**Ending List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 16 | 23 | 42 | 15 | 
-___
-### Pass 5:
-int_arr = [4,8,16,23,42,15]
-
-**Original List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 16 | 23 | 42 | 15 | 
-
-> variables + current values:   
-i = 5    
-j = 4        
-temp = 15    
-
-**New List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 16 | 23 | 42 | 42 | 
-
-> variables + current values:   
-i = 5      
-j = 3          
-temp = 15        
-
-**New List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 16 | 23 | 23 | 42 | 
-
-> variables + current values:   
-i = 5       
-j = 2          
-temp = 15   
-
-**New List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 16 | 16 | 23 | 42 | 
-
-> variables + current values:   
-i = 5       
-j = 1            
-temp = 15   
-
-**Ending List:**
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 15 | 16 | 23| 42 | 
-___
-### Pass 6 (printing out values):
-```
-for i in range(len(int_arr)):
-  print(int_arr[i])
-```
-| Index | 0 | 1 | 2 | 3 | 4 | 5 |  
-| ----- | - | - | - | - | - | - |  
-| Value | 4 | 8 | 15 | 16 | 23| 42 | 
-| Print | 4 | - | - | - | - | - | 
-| Print | 4 | 8 | - | - | - | - | 
-| Print | 4 | 8 | 15 | - | - | - | 
-| Print | 4 | 8 | 15 | 16 | - | - | 
-| Print | 4 | 8 | 15 | 16 | 23 | - | 
-| Print | 4 | 8 | 15 | 16 | 23 | 42 | 
-
+| Value | 4 | 8 | 15 | 16 | 23 | 42 |  
 
 _____
 ## Efficiency
 Big O Time: O(n*2)  
-- Worst case scenario, integers are sorted in reverse order, which would take the max time.
-- Best case scenario, Big O would be O(1) because the array is already sorted.
+Big O Space: O(log(n))    
 
-Big O Space: O(1)
-- Same number of pointers used, regardless of list size
-____
-## Sorting.at - Insertion Sort Visual
-![insertion sort visual](/python/assets/insertsort.png)
+
 
 
 
