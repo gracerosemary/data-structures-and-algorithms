@@ -2,8 +2,8 @@
 
 ## Language: `Python`
 
-# Quick Sort
-[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/challenges/quick_sort)       
+# Merge Sort
+[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/challenges/merge_sort)       
 
 ## Challenge
 Review given pseudocode and create a blog article with a step-through process visualized.
@@ -19,4 +19,4 @@ Big O Time: O(n*log(n)) || T(n) = 2 * T(n / 2) + O(n)
 Big O Space: O(n)   
 
 ## Blog
-[Click here to be directed to the blog](challenges/quick_sort/BLOG.md)  
+[Click here to be directed to the blog](challenges/merge_sort/BLOG.md)  
