@@ -19,4 +19,5 @@
 18. [FizzBuzz](python/fizz_buzz_tree/README.md)  
 19. [Insertion Sort](python/insertion_sort/readme.md)   
 20. [Merge Sort](python/merge_sort/README.md)   
-21. [Quick Sort](python/README.md)  
+21. [Quick Sort](python/quick_sort/README.md)   
+22. [Hash Tables](python/README.md)  
