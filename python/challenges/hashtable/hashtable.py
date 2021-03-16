@@ -4,6 +4,7 @@ from .linkedlist import LinkedList
 class Hashtable:
     def __init__(self, size=1024):
         self.size = size
+        # fill bucket with None type - in order to use while loop later
         self._buckets = [None] * size
 
     def _hash(self, key):
@@ -35,11 +36,12 @@ class Hashtable:
         """
         hashed_key_index = self._hash(key)
         bucket = self._buckets[hashed_key_index]
-        current = bucket.head.value
+        current = bucket.head
 
         while current:
-            if current[0] == key:
-                return current[1]
+            if current.value[0] == key:
+                return current.value[1]
+            current = current.next 
 
     def contains(self, key):
         """Takes in the key and returns a boolean, indicating if the key exisits in the table already.
@@ -47,9 +49,9 @@ class Hashtable:
         hashed_key_index = self._hash(key)
         bucket = self._buckets[hashed_key_index]
         if bucket:
-            current = bucket.head.value
+            current = bucket.head
             while current:
-                if current[0] == key:
+                if current.value[0] == key:
                     return True
                 current = current.next 
             return False
