@@ -20,4 +20,5 @@
 19. [Insertion Sort](python/insertion_sort/readme.md)   
 20. [Merge Sort](python/merge_sort/README.md)   
 21. [Quick Sort](python/quick_sort/README.md)   
-22. [Hash Tables](python/README.md)  
+22. [Hash Tables](python/hashtable/README.md)   
+23. [Repeating Words](python/README.md)   
