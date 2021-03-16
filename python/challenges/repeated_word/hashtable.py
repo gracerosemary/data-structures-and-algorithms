@@ -1,4 +1,3 @@
-# from .linkedlist import LinkedList 
 from linkedlist import LinkedList
 
 class Hashtable:
