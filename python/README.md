@@ -12,7 +12,8 @@ Write a function that accepts a length string parameter. Without utilizing any b
 Write at least 3 test assertions for each method defined. 
 
 ## Approach & Efficiency
-Big O Time:   
-Big O Space:   
+time = O(n) - dependent on the number of elements found in the dictionary
+space = O(1) - no extra space allotted
 
 ## Solution
+![Solution Image](assets/repeat.png)   
