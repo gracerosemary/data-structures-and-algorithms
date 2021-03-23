@@ -21,5 +21,6 @@
 20. [Merge Sort](python/merge_sort/README.md)   
 21. [Quick Sort](python/quick_sort/README.md)   
 22. [Hash Tables](python/hashtable/README.md)   
-23. [Repeating Words](python/repeated_word/README.md)   
-24. [Tree Intersection](python/README.md)   
+23. [Repeating Words](python/repeated_word/README.md)      
+24. [Tree Intersection](python/tree_intersection/README.md)  
+25. [Left Join](python/README.md)  
