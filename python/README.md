@@ -2,27 +2,32 @@
 
 ## Language: `Python`
 
-# Left Join
-[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/challenges/left_join)       
+# Graph Implementation
+[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/challenges/graph)       
 
 ## Challenge
-Write a function that left joins two hashmaps into a single data structure.   
-Parameters: hashmap1, hashmap2  
-hashmap1: word strings as keys, synonym of the key as values  
-hashmap2: word strings as keys, antonyms of the key as values  
-
-Combine the key and corresponding values (if they exist) into a new data structure according to LEFT JOIN logic.  
-
-Left Join: all the values in the first hashmap are returned, and if values exist in the "right" hashmap, they are appended to the result row. If no values exist in the right hashmap, then NULL should be appended to the result row.
-
-Returning data structure is up to you as long as it achieves the LEFT JOIN logic. 
-
+`AddNode()`: Adds a new node to the graph. Takes in the value of that node. Returns the added node.  
+`AddEdge()`: Adds a new edge between two nodes in the graph. Include the ability to have a “weight”. Takes in the two nodes to be connected by the edge. Both nodes should already be in the Graph.  
+`GetNodes()`: Returns all of the nodes in the graph as a collection (set, list, or similar)  
+`GetNeighbors()`: Returns a collection of edges connected to the given node. Takes in a given node. Include the weight of the connection in the returned collection.  
+`Size()`: Returns the total number of nodes in the graph.  
+ 
 ## Tests
-Write at least 3 test assertions for each method defined. 
+- Node can be successfully added to the graph  
+- An edge can be successfully added to the graph  
+- A collection of all nodes can be properly retrieved from the graph
+- All appropriate neighbors can be retrieved from the graph
+- Neighbors are returned with the weight between nodes included
+- The proper size is returned, representing the number of nodes in the graph
+- A graph with only one node and edge can be properly returned
+- An empty graph properly returns null
 
 ## Approach & Efficiency
-time = 
-space = 
+Adding node/edge:
+time = O(1)  
+space = O(1)  
 
-## Solution
-![Solution Image](assets/leftjoin.png)   
+Getting node/neighbors:
+time = O(n)
+space = O(1)
+ 
