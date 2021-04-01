@@ -14,21 +14,13 @@
 `breadth_first()`: Accepts a starting node and returns a collection of nodes in the order they were visited.  
  
 ## Tests
-- Node can be successfully added to the graph  
-- An edge can be successfully added to the graph  
-- A collection of all nodes can be properly retrieved from the graph
-- All appropriate neighbors can be retrieved from the graph
-- Neighbors are returned with the weight between nodes included
-- The proper size is returned, representing the number of nodes in the graph
-- A graph with only one node and edge can be properly returned
-- An empty graph properly returns null
+- One node
+- Multiple nodes
+- Island node
 
 ## Approach & Efficiency
-Adding node/edge:
-time = O(1)  
-space = O(1)  
+time = O(n)   
+space = O(1)       
 
-Getting node/neighbors:
-time = O(n)
-space = O(1)
- 
+## Solution
+![Solution Image](assets/bfs_graph.png)  
