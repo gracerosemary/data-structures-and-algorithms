@@ -2,8 +2,8 @@
 
 ## Language: `Python`
 
-# Graph - Breadth First Search
-[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/challenges/breadth_first)       
+# Graph Implementation
+[Click to be directed to Code Challenge](https://github.com/gracerosemary/data-structures-and-algorithms/tree/master/python/challenges/graph)       
 
 ## Challenge
 `AddNode()`: Adds a new node to the graph. Takes in the value of that node. Returns the added node.  
@@ -11,7 +11,6 @@
 `GetNodes()`: Returns all of the nodes in the graph as a collection (set, list, or similar)  
 `GetNeighbors()`: Returns a collection of edges connected to the given node. Takes in a given node. Include the weight of the connection in the returned collection.  
 `Size()`: Returns the total number of nodes in the graph.  
-`breadth_first()`: Accepts a starting node and returns a collection of nodes in the order they were visited.  
  
 ## Tests
 - Node can be successfully added to the graph  

@@ -69,7 +69,7 @@ class Vertex:
         self.value = value
 
 class Edge:
-    """Edge class
+    """Edge class - vertex is ending vertex
     """
     def __init__(self, vertex, weight=1):
         self.vertex = vertex
