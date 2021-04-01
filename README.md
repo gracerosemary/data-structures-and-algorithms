@@ -25,4 +25,5 @@
 24. [Tree Intersection](python/tree_intersection/README.md)  
 25. [Left Join](python/left_join/README.md)  
 26. [Graph Implementation](python/graph/README.md)  
-27. [Graph - BFS](python/README.md)  
+27. [Graph - BFS](python/breadth_first/README.md)  
+28. [Graph - Get Edge](python/README.md)  
